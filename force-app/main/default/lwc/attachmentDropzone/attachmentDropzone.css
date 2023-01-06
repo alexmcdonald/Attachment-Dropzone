@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+
+.dropzone p {
+    color: #aaaaaa;
+}
+
+.dropzone {
+    height:100px;
+    background-color:#f0f0f0;
+}

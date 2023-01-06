@@ -1,0 +1,28 @@
+<template>
+
+    <div data-id="content">
+        <template for:each={records} for:item="record">
+
+            <p key={record.content.Id} class="slds-m-bottom_medium">
+
+                <template if:true={record.isImage}>
+                    Image: <img src={record.content.Attachment_View_URL__c} />
+                </template>
+                <template if:true={record.isDocument}>
+                    Document:<br />
+                    <a href={record.content.Attachment_View_URL__c}>{record.content.Attachment_Filename__c}</a>
+                </template>
+                <template if:true={record.isVideo}>
+                    Video:<br />
+                    <iframe width={width} height={height} src={record.content.Video_Link_Embed_URL__c}
+                        title="Video Player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation"
+                        allowfullscreen></iframe>
+                </template>
+
+            </p>
+
+        </template>
+    </div>
+</template>
